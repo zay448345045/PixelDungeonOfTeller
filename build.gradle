@@ -8,7 +8,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.4'
+        classpath 'com.android.tools.build:gradle:8.9.1'
         classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.13'
     }
 }
@@ -21,11 +21,11 @@ allprojects {
         appVersionCode = 1
         appVersionName = '1.0.0'
 
-        appJavaCompatibility = JavaVersion.VERSION_1_8
+        appJavaCompatibility = JavaVersion.VERSION_23
 
-        appAndroidCompileSDK = 30
+        appAndroidCompileSDK = 35
         appAndroidMinSDK = 14
-        appAndroidTargetSDK = 30
+        appAndroidTargetSDK = 35
 
         gdxVersion = '1.9.10'
         robovmVersion = '2.3.13'
