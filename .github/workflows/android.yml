@@ -1,0 +1,39 @@
+name: Android CI
+
+on:
+  push:
+    paths:
+     - 'action.on' 
+#    branches: [ "master" ]
+    branches: [ "debug" ]
+#    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: set up JDK 
+      uses: actions/setup-java@v4
+      with:
+        java-version: '23'
+        distribution: 'temurin'
+  #      cache: gradle
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+    - name: Build with Gradle
+      run: ./gradlew assembleDebug
+    - uses: actions/upload-artifact@v4
+      with:
+        name: my-artifact
+        path: '**/*.apk'    #build
+#    - name: Grant execute permission for gradlew
+#      run: chmod +x gradlew
+#    - name: Build with Gradle
+#      run: ./gradlew build
