@@ -9,7 +9,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:8.9.1'
-        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.13'
+//        classpath 'com.mobidevelop.robovm:robovm-gradle-plugin:2.3.13'
     }
 }
 
@@ -28,7 +28,7 @@ allprojects {
         appAndroidTargetSDK = 35
 
         gdxVersion = '1.9.10'
-        robovmVersion = '2.3.13'
+//        robovmVersion = '2.3.13'
     }
 
     version = appVersionName
